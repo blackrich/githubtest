@@ -1,21 +1,29 @@
 you must do this
 1.
- git init
+  git init
 2.
- git config --global user.name "name"
- git config --global user.email "email@email"
+  git config --global user.name "name"
+  git config --global user.email "email@email"
 
 you can do this
- 1. git status //print modified file on your stage
- 2. git add file //if you put * instead of file, add all file on your stage
- 3. git commit file -m "comment" //add file with comment
- 3. git reset --hard //undo. without --hard or --soft, fixed default: mixed
-    git reset --hard gitlognum //undo to log
-    git reset --soft gitlognum //undo to log
- 4. git restore ./ //restore file to your stage
- 5. git log --oneline //print log to file modified
- 6. git reflog //print HEAD's update log
- 7. git rm //remove file on branch
-    git rm --cashed //remove 
- 8. git merge //merge file between two user
+  1. git status //print modified file on your stage
+  2. git add file //if you put * instead of file, add all file on your stage
+  3. git commit file -m "comment" //add file with comment
+  3. git reset --hard //undo. without --hard or --soft, fixed default: mixed
+     git reset --hard gitlognum //undo to log
+     git reset --soft gitlognum //undo to log
+  4. git restore ./ //restore file to your stage
+  5. git log --oneline //print log to file modified
+  6. git reflog //print HEAD's update log
+  7. git rm //remove file on branch
+     git rm --cashed //remove 
+  8. git merge //merge file between two user
+  9. git remote add origin http://github.com/path/path
+     git remote
+     git remote -v     //interlock git on local with github
+10. git push --set-upstream origin name //
+11. git branch name //branch name
+
+
+
 
