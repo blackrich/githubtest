@@ -24,6 +24,3 @@ you can do this
 10. git push --set-upstream origin name //
 11. git branch name //branch name
 
-
-
-
