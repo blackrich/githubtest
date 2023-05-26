@@ -1,0 +1,32 @@
+
+
+delimiter $$
+create procedure proc_insert_tbl_registration(in sid varchar(45), in lcode int, lduration varchar(100))
+begin
+	declare err_code varchar(5);
+    declare err_msg varchar(255);
+	declare continue handler for sqlexception
+    begin
+		show errors;
+        get diagnostics condition 1
+        err_code = mysql_errno,
+        err_msg = message_text;
+        insert into tbl_errlog values(null, err_code, now(), err_msg);
+    end ;
+    insert into tbl_registration values(sid, lcode, lduration);
+end $$
+delimiter ;
+drop procedure proc_insert_tbl_registration;
+
+call proc_insert_tbl_registration('20190001', 1001, '2023-05-22 - 2023-06-21');
+call proc_insert_tbl_registration('20190001', 7001, '2023-05-22 - 2023-06-21');
+call proc_insert_tbl_registration('70190001', 1001, '2023-05-22 - 2023-06-21');
+select * from tbl_registration;
+select * from tbl_student;
+select * from tbl_errlog;
+
+delete from tbl_registration;
+delete from tbl_errlog;
+
+set sql_safe_updates = 0;
+set sql_safe_updates = 1;
